@@ -1,0 +1,91 @@
+body * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #e1e1e1;
+}
+
+/* Global */
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background-color: #4b4f52;
+    color: #ec6c3b;
+    min-height: 134px;
+}
+
+header #branding {
+    float: left;
+}
+
+header h1 {
+    font-size: 66px;
+    font-weight: normal;
+    margin: 23px;
+}
+
+header nav {
+    float: right;
+    margin: 45px 0 45px 45px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    display: inline;
+    padding-right: 70px;
+}
+
+header .right {
+    padding-right: 0;
+}
+
+header .active {
+    color: #e1e1e1;
+    font-weight: bold;
+}
+
+header a {
+    color: #ec6c3b;
+    text-decoration: none;
+    font-size: 33px;
+}
+
+header a:hover {
+    color: #7b7e7d;
+}
+
+/* Showcase */
+#showcase {
+    height: calc(100vh - 134px);
+    background:url('../Images/Showcase.jpg') no-repeat center;
+    background-size: cover;
+}
+
+#showcase button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    border: none;
+    text-align: center;
+    background-color: #ec6c3b;
+    color: #7b7e7d;
+    cursor: pointer;
+    padding: 13px 41px 13px 41px;
+    border-radius: 32px;
+}
