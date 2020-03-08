@@ -20,7 +20,6 @@ body {
 /* Header */
 header {
     background-color: #4b4f52;
-    color: #ec6c3b;
     min-height: 134px;
 }
 
@@ -34,8 +33,14 @@ header h1 {
     margin: 23px;
 }
 
+header #branding a {
+    text-decoration: none;
+    color: #ec6c3b;
+}
+
 header nav {
     float: right;
+    color: #ec6c3b;
     margin: 45px 0 45px 45px;
 }
 
@@ -58,28 +63,24 @@ header .active {
     font-weight: bold;
 }
 
-header a {
+header nav a {
     color: #ec6c3b;
     text-decoration: none;
     font-size: 33px;
 }
 
-header a:hover {
+header nav a:hover {
     color: #7b7e7d;
 }
 
 /* Showcase */
 #showcase {
-    height: calc(100vh - 134px);
-    background:url('../Images/Showcase.jpg') no-repeat center;
+    background: url('../Images/Showcase.jpg') no-repeat center;
     background-size: cover;
+    text-align: center;
 }
 
 #showcase button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 40px;
     border: none;
     text-align: center;
