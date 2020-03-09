@@ -90,3 +90,41 @@ header nav a:hover {
     padding: 13px 41px 13px 41px;
     border-radius: 32px;
 }
+
+/* Boxes */
+#items {
+    margin: 64px 0 63px 0;
+}
+
+#items .container {
+
+    align-content: initial;
+}
+
+#items .item {
+    display: inline-block;
+    min-width: 200px;
+    max-width: 500px;
+    margin-right: calc((1/14) * 100vw);
+    vertical-align: top;
+    text-align: center;
+}
+
+#items #last {
+    margin-right: 0;
+}
+
+#items .item h3{
+    font-size: 50px;
+}
+
+#items .item p {
+    font-size: 35px;
+}
+
+#items .item img {
+    width: 130px;
+    margin-bottom: 18px;
+}
+
+/* Footer */
