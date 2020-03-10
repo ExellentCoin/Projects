@@ -1,7 +1,6 @@
 window.onload = function onLoad() {
     changeShowcaseHeight();
     allignButton();
-    centerItems();
 }
 
 function changeShowcaseHeight(){
@@ -12,10 +11,4 @@ function changeShowcaseHeight(){
 function allignButton() {
     let showcaseHeight = document.getElementById('showcase').offsetHeight;
     document.getElementById('button').style.marginTop = `${(showcaseHeight/2) - 50}px`
-}
-
-function centerItems() {
-    let items = document.getElementsByClassName('item');
-    console.log(items)
-    //items.style.marginLeft = `${(window.innerWidth - itemsWidth) / 2}px`;
 }

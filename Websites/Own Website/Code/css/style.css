@@ -92,13 +92,13 @@ header nav a:hover {
 }
 
 /* Boxes */
-#items {
-    margin: 64px 0 63px 0;
+.wrapper {
+    text-align: center;
 }
 
-#items .container {
-
-    align-content: initial;
+.wrapper #items {
+    margin: 64px 0 63px 0;
+    display: inline-block;
 }
 
 #items .item {
@@ -110,15 +110,14 @@ header nav a:hover {
     text-align: center;
 }
 
-#items #last {
-    margin-right: 0;
-}
-
 #items .item h3{
+    color: #4b4f52;
     font-size: 50px;
+    margin-bottom: 41px;
 }
 
 #items .item p {
+    color: #4b4f52;
     font-size: 35px;
 }
 
@@ -128,3 +127,10 @@ header nav a:hover {
 }
 
 /* Footer */
+footer {
+    text-align: center;
+    font-size: 36px;
+    padding: 30px 0 30px 0;
+    background-color: #3c787e;
+    color: #4b4f52;
+}
