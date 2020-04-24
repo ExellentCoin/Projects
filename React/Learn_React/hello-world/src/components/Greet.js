@@ -1,5 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-const Greet = () => <h1>Hello Jonas</h1>
+const Greet = ({ name, test, children }) => {
+    return (
+        <div>
+            <h1>
+                Hello {name} and {test}
+            </h1>
+            {children}
+        </div>
+    );
+};
 
-export default Greet
+export default Greet;
