@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Message from './components/Message';
 import Greet from './components/Greet';
@@ -9,13 +8,16 @@ import ClickFunction from './components/ClickFunction';
 import ClickClass from './components/ClickClass';
 import BindEventHandler from './components/BindEventHandler';
 import ParentComponent from './components/ParentComponent';
+import ConditionalRender from './components/ConditionalRender';
+import ListNames from './components/ListNames';
+import FormHandler from './components/FormHandler';
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-            <ParentComponent />
+        <div className='App'>
+            <FormHandler />
         </div>
     );
-}
+};
 
 export default App;
