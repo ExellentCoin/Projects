@@ -1,0 +1,11 @@
+{
+  "name": "learning-discord-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "start": "node App.js"
+  },
+  "author": "ExellentCoin",
+  "license": "ISC"
+}
