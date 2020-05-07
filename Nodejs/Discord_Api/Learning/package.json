@@ -1,11 +1,16 @@
 {
   "name": "learning-discord-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discord Test bot",
   "main": "App.js",
   "scripts": {
-    "start": "node App.js"
+    "start": "nodemon App.js"
   },
   "author": "ExellentCoin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "googleapis": "^50.0.0",
+    "nodemon": "^2.0.3"
+  }
 }
