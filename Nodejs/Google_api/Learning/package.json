@@ -1,0 +1,14 @@
+{
+  "name": "learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "ExellentCoin",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^50.0.0"
+  }
+}

@@ -1,40 +1,8 @@
 const discord = require('discord.js');
 const auth = require('./auth.json');
 
-const { google } = require('googleapis');
-const calendar = google.calendar({
-    version: 'v3',
-    auth: auth.google,
-});
-
-// calendar.events.insert(
-//     {
-//         auth: auth.google,
-//         calendarId: 'auoo0fq4adr0hkeifqg4j4rjp0@group.calendar.google.com',
-//         resource: {
-//             summary: 'test',
-//             description: 'test description',
-//             start: {
-//                 dateTime: '2020-05-7T00:00:00',
-//                 timeZone: 'GMT+2',
-//             },
-//             end: {
-//                 dateTime: '2020-05-7T00:01:00',
-//                 timeZone: 'GMT+2',
-//             },
-//         },
-//     },
-//     (err, res) => {
-//         console.error(err);
-//     }
-// );
-
-calendar.events.quickAdd({ auth: auth.google, calendarId: 'auoo0fq4adr0hkeifqg4j4rjp0@group.calendar.google.com', text: 'test' }, res => {
-    console.log(res);
-});
-
 const bot = new discord.Client();
-bot.login(auth.discord);
+bot.login(auth.token);
 
 bot.on('ready', () => {
     console.log(`Bot started and connected to (${bot.user.tag})`);

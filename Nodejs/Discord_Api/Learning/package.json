@@ -9,8 +9,9 @@
   "author": "ExellentCoin",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.2.0",
-    "googleapis": "^50.0.0",
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.3"
   }
 }
