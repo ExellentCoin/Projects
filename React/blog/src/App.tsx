@@ -22,11 +22,13 @@ const items: Item[] = [
 	},
 ];
 
+let ItemArray: any = [];
+
+items.map((item): void => {
+	return ItemArray.push(<Item key={item.id} author={item.author} content={item.content} />);
+});
+
 function App(): JSX.Element {
-	let ItemArray: any = [];
-	items.map(item => {
-		ItemArray.push(<Item key={item.id} author={item.author} content={item.content} />);
-	});
 	return (
 		<div className='App'>
 			<Header />
