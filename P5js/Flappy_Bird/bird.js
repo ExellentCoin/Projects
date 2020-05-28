@@ -1,12 +1,14 @@
 class Bird {
     constructor(x, y) {
+        //Game
         this.x = x;
         this.y = y;
-
         this.vel = 0;
         this.grav = 0.3;
         this.lift = -9;
         this.highlite = false;
+
+        this.initModel();
     }
 
     draw() {
@@ -32,13 +34,34 @@ class Bird {
             this.vel = 0;
         }
 
-        for (let pipe of pipes) {
+        //Check for the closest pipe
+        this.closest_pipe;
+        if (pipes.length < 1) {
+            for (let i = 0; i < pipes.length; i++) {
+                if (pipes[i].x > bird.x && pipes[i].x < pipes[i + 1].x) {
+                    this.closest_pipe = pipes[i];
+                    print(this.closest_pipe);
+                }
+            }
+        } else {
+            this.closest_pipe = pipes[0];
         }
+
+        this.inputs = [];
+        this.inputs[0] = this.y / height; //Bird x
+        this.inputs[1] = this.vel / 20; //Bird vel
+        this.inputs[2] = this.closest_pipe.pipe / height; //Closest pipe top
+        this.inputs[3] = (this.closest_pipe.pipe + this.closest_pipe.gap) / height; //Closest pipe bottom
+        this.inputs[4] = (this.closest_pipe.x - this.x) / width;
     }
 
     up() {
         this.vel /= 2;
         this.vel += this.lift;
-        this.vel = constrain(this.vel, -25, 1000000);
+        this.vel = constrain(this.vel, -20, 20);
+    }
+
+    initModel() {
+        this.nn = new NeuralNetwork(5, 8, 2);
     }
 }

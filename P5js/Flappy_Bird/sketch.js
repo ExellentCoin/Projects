@@ -1,11 +1,14 @@
 let bird;
 let pipes = [];
 let interval = 0;
+let score = 0;
+let score_dom;
 
 function setup() {
     createCanvas(1000, 1000);
-    bird = new Bird(width / 2 - 200, 0);
     pipes.push(new Pipe());
+    bird = new Bird(width / 2 - 200, 0);
+    score_dom = createDiv(`Score: ${score}`);
 }
 
 function draw() {
@@ -29,6 +32,9 @@ function draw() {
         }
         pipe.draw();
     }
+
+    score++;
+    score_dom.html(`Score: ${score}`);
 
     interval++;
 }

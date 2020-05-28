@@ -14,7 +14,6 @@ class Pipe {
         rect(this.x, 0, this.w, this.pipe);
         rect(this.x, height, this.w, -(height - (this.pipe + this.gap)));
         this.x -= this.speed;
-        this.y -= this.speed;
     }
 
     hits(bird) {
