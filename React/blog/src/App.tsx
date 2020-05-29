@@ -1,40 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 
+import { FireBaseInit, getFirebaseData } from './Firebase-helpers';
 import Item from './components/Item';
 import { Header } from './components/Stuff';
+import { IState, Iprops, IData } from './interface-helper';
 
-interface Item {
-	id: number;
-	author: string;
-	content: string;
+FireBaseInit(); // Initialize Firebase and firestore
+
+export default class App extends Component<Iprops, IState> {
+	state: IState;
+
+	constructor(props: Iprops) {
+		super(props);
+		this.state = {
+			data: [],
+		};
+	}
+
+	render() {
+		let Items: any = [];
+		const { data = [] } = this.state;
+		if (data !== []) {
+			data.map(i => {
+				return Items.push(<Item key={i.id} author={i.author} content={i.content} />);
+			});
+		}
+		return (
+			<div className='App'>
+				<Header />
+				{Items}
+			</div>
+		);
+	}
+
+	async componentDidMount() {
+		let loadedData: IData[] = [];
+		loadedData = await getFirebaseData();
+		await this.setState({
+			data: loadedData,
+		});
+	}
 }
-
-const items: Item[] = [
-	{
-		id: 0,
-		author: 'Jonas',
-		content: 'This is again a test',
-	},
-	{
-		id: 1,
-		author: 'David',
-		content: 'this is test number 2',
-	},
-];
-
-let ItemArray: any = [];
-
-items.map((item): void => {
-	return ItemArray.push(<Item key={item.id} author={item.author} content={item.content} />);
-});
-
-function App(): JSX.Element {
-	return (
-		<div className='App'>
-			<Header />
-			{ItemArray}
-		</div>
-	);
-}
-
-export default App;
