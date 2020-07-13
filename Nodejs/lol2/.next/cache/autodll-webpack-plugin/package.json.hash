@@ -1,0 +1,1 @@
+{"name":"lol2","version":"1.0.0","description":"","main":"index.js","scripts":{"dev":"next dev"},"keywords":[],"author":"","license":"ISC","devDependencies":{"nodemon":"^2.0.4"},"dependencies":{"next":"^9.4.4","react":"^16.13.1","react-dom":"^16.13.1"},"readme":"ERROR: No README data found!","_id":"lol2@1.0.0"}

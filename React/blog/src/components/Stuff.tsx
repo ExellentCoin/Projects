@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Header(): JSX.Element {
+export const Header = (): JSX.Element => {
 	return (
 		<React.Fragment>
 			<header className='bg-info text-white'>
@@ -23,4 +23,4 @@ export function Header(): JSX.Element {
 			</header>
 		</React.Fragment>
 	);
-}
+};
