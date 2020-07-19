@@ -9,4 +9,16 @@ const getBlogs = async () => {
 	}
 };
 
-export { getBlogs };
+const addBlogs = async values => {
+	await fetch('http://localhost:1337/API/addBlogs', {
+		method: 'POST',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(values),
+	});
+	console.log('Added requested Data');
+};
+
+export { getBlogs, addBlogs };

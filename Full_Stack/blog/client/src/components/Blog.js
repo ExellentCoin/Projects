@@ -1,35 +1,32 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getBlogs } from './API';
 
-class Blog extends Component {
-	constructor() {
-		super();
-		this.state = {
-			blogs: [],
+const Blog = () => {
+	const [blogs, setBlogs] = useState([]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await getBlogs();
+			if (data) {
+				setBlogs(data);
+			}
 		};
-	}
+		getData();
+	}, []);
 
-	render() {
-		const blogs = [];
-		this.state.blogs.map(blog => {
-			blogs.push(
-				<React.Fragment key={blog.id}>
-					<h1>{blog.author}</h1>
-					<h1>{blog.title}</h1>
-					<h1>{blog.content}</h1>
-				</React.Fragment>
-			);
-			return null;
-		});
-		return blogs;
-	}
+	const blogsJSX = [];
+	blogs.map(blog => {
+		blogsJSX.push(
+			<React.Fragment key={blog.id}>
+				<h1>{blog.author}</h1>
+				<h1>{blog.title}</h1>
+				<h1>{blog.content}</h1>
+			</React.Fragment>
+		);
+		return null;
+	});
 
-	async componentDidMount() {
-		const data = await getBlogs();
-		if (data) {
-			this.setState({ blogs: data });
-		}
-	}
-}
+	return blogsJSX;
+};
 
 export default Blog;
