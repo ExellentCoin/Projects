@@ -1,7 +1,8 @@
-// Change the USERNAME, PASSWORD and HOSTNAME variables in the '.env' file
+// Change the USERNAME, PASSWORD and HOSTNAME variables in the 'Dockerfile' file
 
 require('dotenv').config(); // Load the environement variables
 
+const { CronJob } = require('cron');
 const request = require('request'); // Require the package to send the get request
 
 const auth = `Basic ${Buffer.from(
@@ -15,6 +16,14 @@ const options = {
     },
 }; // Define the headers needed to send the request
 
-request(options, (err, res, body) => {
-    console.log(body);
-}); // Send the request and log the responded in console
+const job = new CronJob(
+    '*/30 * * * *',
+    () => {
+        request(options, (err, res, body) => {
+            console.log(body);
+        }); // Send the request and log the responded in console
+    },
+    console.log()
+); // Do this every 30 minutes
+
+job.start();
