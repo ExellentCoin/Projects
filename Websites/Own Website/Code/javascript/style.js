@@ -1,4 +1,9 @@
-window.onload = function onLoad() {
+window.onload = function onload() {
+    changeShowcaseHeight();
+    allignButton();
+}
+
+window.onresize = function onresize() {
     changeShowcaseHeight();
     allignButton();
 }
